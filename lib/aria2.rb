@@ -150,7 +150,6 @@ module Aria2
     private
 
     def post(url, params = {})
-      uri = URI.parse(url)
       response = RestClient.post(url, params.to_json, :content_type => :json, :accept => :json)
       {
           'code' => response.code.to_i,
